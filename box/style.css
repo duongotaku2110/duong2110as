@@ -1,0 +1,7 @@
+body {
+    background: radial-gradient(circle, pink, deeppink);
+}
+strong {
+    font-weight: bold;
+    font-size: 20px;
+}

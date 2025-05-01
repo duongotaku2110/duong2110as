@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pink Gradient Background</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle, #ffc0cb, #ff69b4);
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <h1>an nhon xê ô</h1>
+</body>
+<script>
+    const heading = document.querySelector('h1');
+    heading.addEventListener('click', () => {
+        heading.style.display = 'none';
+
+        const questionDiv = document.createElement('div');
+        questionDiv.innerHTML = `
+            <p style="color: white; font-size: 1.5rem;">Bạn có muốn mở quà không?</p>
+            <button id="yesButton" style="margin-right: 10px;">Có</button>
+            <button id="noButton">Không</button>
+        `;
+        document.body.appendChild(questionDiv);
+
+        const noButton = document.getElementById('noButton');
+        noButton.addEventListener('mouseover', () => {
+            const randomX = Math.random() * (window.innerWidth - noButton.offsetWidth);
+            const randomY = Math.random() * (window.innerHeight - noButton.offsetHeight);
+            noButton.style.position = 'absolute';
+            noButton.style.left = `${randomX}px`;
+            noButton.style.top = `${randomY}px`;
+        });
+    });
+</script></script>
+<script>
+    document.body.addEventListener('click', (event) => {
+        if (event.target.id === 'yesButton') {
+            document.body.innerHTML = ''; // Clear all content
+
+            const redBox = document.createElement('div');
+            redBox.style.width = '200px';
+            redBox.style.height = '200px';
+            redBox.style.backgroundColor = 'red';
+            redBox.style.display = 'flex';
+            redBox.style.justifyContent = 'center';
+            redBox.style.alignItems = 'center';
+            redBox.style.cursor = 'pointer';
+            redBox.innerHTML = '<p style="color: white; font-size: 1.5rem; margin: 0;">Click me!</p>';
+            document.body.appendChild(redBox);
+
+            redBox.addEventListener('click', () => {
+                document.body.innerHTML = '<h1 style="color: white; text-align: center;">Bạn làm ny tôi nhá</h1>';
+            });
+        }
+    });
+</script></script>
